@@ -32,13 +32,9 @@ library
                       base >= 4 && < 5
                     , lens >= 4.0 && < 5.0
                     , transformers >= 0.4 && < 0.6
-                    , papa >= 0.0.1 && < 0.1
                     
   ghc-options:
                     -Wall
-
-  default-extensions:
-                    NoImplicitPrelude
 
   hs-source-dirs:
                     src

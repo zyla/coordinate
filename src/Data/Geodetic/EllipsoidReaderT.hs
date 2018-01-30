@@ -1,4 +1,3 @@
-{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE TypeFamilies #-}
@@ -33,13 +32,13 @@ import Control.Monad.IO.Class(MonadIO(liftIO))
 import Control.Monad.Trans.Class(MonadTrans(lift))
 import Control.Monad.Trans.Reader(ReaderT)
 import Control.Monad.Zip(MonadZip(mzip))
+import Control.Lens (makeWrapped, Iso', ReifiedIso', (^.), iso, ReifiedIso(Iso), (#), _Unwrapped, _Wrapped', (&), from)
 import Data.Functor.Identity(Identity(Identity, runIdentity))
 import Data.Geodetic.ECEF(ECEF(..), HasECEF(z))
 import Data.Geodetic.Ellipsoid(Ellipsoid, HasEllipsoid(semiMajor, flattening), flatteningReciprocal, wgs84)
 import Data.Geodetic.LL(LL(LL), HasLL(lat, lon))
 import Data.Geodetic.LLH(LLH(LLH), HasLLH(height))
 import Data.Geodetic.XY(XY(XY), HasXY(x, y))
-import Papa
 
 -- $setup
 -- >>> import Control.Lens(ReifiedIso(runIso))

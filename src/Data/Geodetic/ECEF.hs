@@ -1,4 +1,3 @@
-{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE TemplateHaskell #-}
 
 module Data.Geodetic.ECEF(
@@ -6,9 +5,10 @@ module Data.Geodetic.ECEF(
 , HasECEF(..)
 ) where
 
+import Control.Lens (lens)
+import Control.Lens.TH (makeClassy)
 import Data.Geodetic.HasDoubles(HasDoubles(doubles))
 import Data.Geodetic.XY(XY, HasXY(xY))
-import Papa
 
 data ECEF =
   ECEF {

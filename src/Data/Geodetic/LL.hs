@@ -1,4 +1,3 @@
-{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE TemplateHaskell #-}
 
 module Data.Geodetic.LL(
@@ -8,8 +7,9 @@ module Data.Geodetic.LL(
 , (<◦>)
 ) where
 
+import Control.Lens (Iso', (^.), iso)
+import Control.Lens.TH (makeClassy)
 import Data.Geodetic.HasDoubles(HasDoubles(doubles))
-import Papa
 
 -- $setup
 -- >>> import Control.Lens

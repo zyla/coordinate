@@ -1,11 +1,8 @@
-{-# LANGUAGE NoImplicitPrelude #-}
-{-# LANGUAGE TemplateHaskell #-}
-
 module Data.Geodetic.HasDoubles(
   HasDoubles(..)
 ) where
 
-import Papa
+import Control.Lens (Traversal')
 
 class HasDoubles a where
   doubles ::

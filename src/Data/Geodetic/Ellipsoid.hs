@@ -1,4 +1,3 @@
-{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE TemplateHaskell #-}
 
 module Data.Geodetic.Ellipsoid(
@@ -23,8 +22,9 @@ module Data.Geodetic.Ellipsoid(
 , clarke1880
 ) where
 
+import Control.Lens (Lens', involuted)
+import Control.Lens.TH (makeClassy)
 import Data.Geodetic.HasDoubles(HasDoubles(doubles))
-import Papa
 
 data Ellipsoid =
   Ellipsoid {

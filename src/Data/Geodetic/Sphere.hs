@@ -1,4 +1,3 @@
-{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE FlexibleInstances #-}
@@ -10,8 +9,9 @@ module Data.Geodetic.Sphere(
 , ellipsoidSphere
 ) where
 
+import Control.Lens (Prism', prism')
+import Control.Lens.TH (makeWrapped)
 import Data.Geodetic.Ellipsoid(Ellipsoid(Ellipsoid))
-import Papa
 
 -- $setup
 -- >>> import Control.Lens

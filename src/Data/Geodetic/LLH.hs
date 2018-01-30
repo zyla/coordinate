@@ -1,4 +1,3 @@
-{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE TemplateHaskell #-}
 
 module Data.Geodetic.LLH(
@@ -6,9 +5,10 @@ module Data.Geodetic.LLH(
 , HasLLH(..)
 ) where
 
+import Control.Lens (lens)
+import Control.Lens.TH (makeClassy)
 import Data.Geodetic.HasDoubles(HasDoubles(doubles))
 import Data.Geodetic.LL(HasLL(lL), LL)
-import Papa
 
 data LLH =
   LLH {
